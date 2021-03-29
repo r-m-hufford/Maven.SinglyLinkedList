@@ -78,12 +78,33 @@ public class SinglyLinkedList {
     }
 
     public int get(int index) {
-        return 0;
+        Node current = head;
+        int counter = 0;
+
+        while (counter < index) {
+            current = current.next;
+            counter++;
+        }
+        return current.data;
     }
 
     public void copy() {}
 
-    public void sort() {}
+    public void sort() {
+        Node current = head;
+        boolean stillSorting = true;
+        while (stillSorting) {
+            stillSorting = false;
+            for (int i = 0; i < size(); i++) {
+                if (current.data > current.next.data) {
+                    Node temp = current;
+                    current = current.next;
+                    current.next = temp;
+                    stillSorting = true;
+                }
+            }
+        }
+    }
 
 
     public void display() {

@@ -63,6 +63,42 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void get() {
+        SinglyLinkedList sList = new SinglyLinkedList();
+
+        sList.add(1);
+        sList.add(2);
+        sList.add(3);
+        sList.add(4);
+        sList.add(5);
+        sList.add(6);
+
+        int actual = sList.get(4);
+        int expected = 5;
+
+        Assert.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void sort() {
+        SinglyLinkedList sList = new SinglyLinkedList();
+
+        sList.add(2);
+        sList.add(1);
+        sList.add(6);
+        sList.add(4);
+        sList.add(3);
+        sList.add(5);
+
+        sList.sort();
+        sList.display();
+
+        //Assert.assertEquals(expected, actual);
+    }
+
+
 
 
 
