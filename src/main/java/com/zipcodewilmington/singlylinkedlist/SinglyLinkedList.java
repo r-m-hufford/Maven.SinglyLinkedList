@@ -30,19 +30,51 @@ public class SinglyLinkedList {
         }
     }
 
-    public void remove() {}
+    public void remove(int index) {
+        Node current = head;
+        int counter = 0;
+        while (counter > index) {
+            current = current.next;
+            counter++;
+        }
+        current.next = current.next.next;
+    }
 
-    public boolean contains() {
+    public boolean contains(int data) {
+        Node current = head;
+
+        while (current.next != null) {
+            if(current.data == data) {
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
 
-    public int find() {
-        //returns index of first instance or -1
-        return -1;
+    public int find(int data) {
+        Node current = head;
+        int counter = 0;
+
+        while (current.next != null) {
+            if(current.data == data) {
+                break;
+            }
+            current = current.next;
+            counter++;
+        }
+        return counter;
     }
 
     public int size() {
-        return 0;
+        Node current = head;
+        int counter = 0;
+
+        while(current != null)  {
+            counter++;
+            current = current.next;
+        }
+        return counter;
     }
 
     public int get(int index) {
