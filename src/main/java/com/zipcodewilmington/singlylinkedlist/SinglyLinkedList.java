@@ -13,6 +13,14 @@ public class SinglyLinkedList {
             this.data = data;
             this.next = null;
         }
+
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
     }
 
     public Node head = null;
@@ -77,7 +85,7 @@ public class SinglyLinkedList {
         return counter;
     }
 
-    public int get(int index) {
+    public int getData(int index) {
         Node current = head;
         int counter = 0;
 
@@ -88,24 +96,45 @@ public class SinglyLinkedList {
         return current.data;
     }
 
-    public void copy() {}
+    public Node setNode(int index) {
+        Node current = head;
+        int counter = 0;
+
+        while (counter < index) {
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
+
+    public void copy(SinglyLinkedList list) {
+        //start at beginning of existing linked list
+        //create a new Linked list called bList
+        //while next != null bList add
+        Node current = head;
+        list = new SinglyLinkedList();
+
+        while (current.next != null) {
+            list.add(current.data);
+            current = current.next;
+        }
+    }
 
     public void sort() {
-        Node current = head;
+        int size = size();
         boolean stillSorting = true;
         while (stillSorting) {
             stillSorting = false;
-            for (int i = 0; i < size(); i++) {
-                if (current.data > current.next.data) {
-                    Node temp = current;
-                    current = current.next;
-                    current.next = temp;
+            for (int i = 0; i < size - 1; i++) {
+                if (getData(i) > getData(i+1)) {
+                    int temp = getData(i);
+                    setNode(i).data = getData(i+1);
+                    setNode(i+1).data = temp;
                     stillSorting = true;
                 }
             }
         }
     }
-
 
     public void display() {
         Node current = head;
@@ -118,4 +147,5 @@ public class SinglyLinkedList {
             current = current.next;
         }
     }
+
 }

@@ -151,6 +151,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -397,7 +399,10 @@
       <workItem from="1616779015632" duration="5000" />
       <workItem from="1616779024453" duration="3000" />
       <workItem from="1616779061849" duration="1430000" />
-      <workItem from="1616972488695" duration="8234000" />
+      <workItem from="1616972488695" duration="8727000" />
+      <workItem from="1617037031312" duration="1973000" />
+      <workItem from="1617046039643" duration="478000" />
+      <workItem from="1617133221481" duration="2176000" />
     </task>
     <servers />
   </component>
