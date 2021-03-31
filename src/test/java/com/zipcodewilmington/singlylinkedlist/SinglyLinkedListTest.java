@@ -94,10 +94,26 @@ public class SinglyLinkedListTest {
 
 
         sList.sort();
-        sList.display();
+        int expected = 3;
+        int actual = sList.getData(2);
 
+        Assert.assertEquals(expected, actual);
+    }
 
-        //Assert.assertEquals(expected, actual);
+    @Test
+    public void copy() {
+        SinglyLinkedList expected = new SinglyLinkedList();
+
+        expected.add(2);
+        expected.add(1);
+        expected.add(6);
+        expected.add(4);
+        expected.add(3);
+        expected.add(5);
+
+        SinglyLinkedList actual = expected.copy();
+
+        Assert.assertEquals(expected.getData(2), actual.getData(2));
     }
 
 

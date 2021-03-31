@@ -13,14 +13,6 @@ public class SinglyLinkedList {
             this.data = data;
             this.next = null;
         }
-
-        public int getData() {
-            return data;
-        }
-
-        public void setData(int data) {
-            this.data = data;
-        }
     }
 
     public Node head = null;
@@ -107,17 +99,15 @@ public class SinglyLinkedList {
         return current;
     }
 
-    public void copy(SinglyLinkedList list) {
-        //start at beginning of existing linked list
-        //create a new Linked list called bList
-        //while next != null bList add
+    public SinglyLinkedList copy() {
+        SinglyLinkedList newList = new SinglyLinkedList();
         Node current = head;
-        list = new SinglyLinkedList();
 
         while (current.next != null) {
-            list.add(current.data);
+            newList.add(current.data);
             current = current.next;
         }
+        return newList;
     }
 
     public void sort() {
